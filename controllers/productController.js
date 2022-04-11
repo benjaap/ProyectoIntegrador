@@ -1,6 +1,11 @@
+const productos = require('../db/productos')
+
 const productController = {
     detalle: function(req, res){
-        res.render('index', { title:'Producto Detalle' })
+        res.render('product', { producto: "un producto"})
+    },
+    Add: function(req, res){
+        res.render('Add', { title:'Agregar Producto' })
     }
 }
 

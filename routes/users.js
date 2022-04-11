@@ -7,4 +7,7 @@ router.get('/', userController.user);
 
 router.get("")
 
+router.get('/login',userController.login);
+
+
 module.exports = router;

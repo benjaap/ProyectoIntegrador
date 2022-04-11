@@ -6,6 +6,8 @@ router.get("/", function(req, res){
     res.send('')
 });
 
-router.get("/:id", productController.detalle);
+router.get('/detalle/:id', productController.detalle);
+
+router.get('/Add', productController.Add);
 
 module.exports = router;
