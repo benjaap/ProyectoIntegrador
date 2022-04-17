@@ -5,7 +5,7 @@ var router = express.Router();
 /* GET users listing. */
 router.get('/', userController.user);
 
-router.get("")
+router.get("/register", userController.register);
 
 router.get('/login',userController.login);
 

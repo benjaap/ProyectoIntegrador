@@ -10,7 +10,7 @@ const productController = {
     },
     searchResult: function(req,res){
         res.render('searchResults', { title:'Search Result'})
-    }
+    },
 }
 
 module.exports = productController;
