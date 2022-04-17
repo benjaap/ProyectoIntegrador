@@ -11,6 +11,9 @@ const userController = {
     editProfile: function(req, res){
         res.render('editProfile', {title:'Edit Profile'})
     },
+    register: function(req, res){
+        res.render('register', {title:"Register"})
+    }
 }
 
 module.exports = userController;
