@@ -37,7 +37,7 @@
 	
 			<nav class="main-navbar">
 				<ul class="left-navbar">
-					<li><a href="index.html">Todos los productos</a></li>
+					<li><a href="index">Todos los productos</a></li>
 					<!-- solo logueado <li><a href="">Cargar productos</a></li> -->
 				</ul>
 	
@@ -54,7 +54,7 @@
 							</form>
 						</li> -->
 					<li>
-						<a href="register.html">Creá tu cuenta <i class="far fa-address-card"></i>
+						<a href="register">Creá tu cuenta <i class="far fa-address-card"></i>
 						</a>
 					</li>
 					<li>
@@ -73,12 +73,21 @@
 				<h2 class="products-title">Ingresar</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá va el formulario de login. <br>
-			Debe cumplir con los puntos de la consigna y ser coherente con la tabla de la base de datos <br>
-			Eliminen estás líneas y coloquen el formulario. <br>
-			Recuerden todo lo que necesita tanto la etiqueta form como los campos input para operar correctamtente</i> <br>
-			////////////////
-			</h2>
+				<div class="formulario-login">
+					<form action="/views/index.ejs" method="GET">
+						<p><label for="text">Usuario:</label></p>
+						<p><input type="text" id="Usuario" name="usuario" </p>
+
+					    <p><label for="contraseña">Contraseña:</label></p>
+					    <p><input type="password" id="Contraseña" name="contraseña"</p>
+
+						<p><label for="recordarme">Recordarme:</label></p>
+						<p><input type="radio" name="opción" value="Si">Si</p>
+						<p><input type="radio" name="opción" value="No">No</p>
+
+						<p><input type="submit" value="Enviar"></p>
+					</form>
+				</div>
 
 
 	<!-- footer -->

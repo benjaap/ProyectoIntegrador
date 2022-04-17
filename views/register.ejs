@@ -2,7 +2,19 @@
 <html lang="es">
 <!-- Include Head -->
 
-<%- include('./partials/head') %>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link width="" rel="shortcut icon" href="./images/logo-mercado-liebre.jpg" />
+
+	<title> Mercado Liebre Argentina</title>
+	<!-- Font Awesome Stylesheet -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+	<!-- Bootstrap Grid Stylesheet -->
+	<link rel="stylesheet" href="./css/bootstrap-grid.min.css">
+	<!-- Own Stylesheet -->
+	<link rel="stylesheet" href="./css/app.css">
+</head>
 
 <body>
 	<!-- Header -->
@@ -16,7 +28,7 @@
 				</div>
 	
 				<div class="col-7 col-md-6">
-					<form action="" method="GET" class="search-form">
+					<form action="search-results.html" method="GET" class="search-form">
 						<input type="text" name="search" placeholder="Buscar productos, marcas y más"
 							class="search-form_input">
 						<button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
@@ -38,28 +50,28 @@
 			<nav class="main-navbar">
 				<ul class="left-navbar">
 					<li><a href="index.html">Todos los productos</a></li>
-					<li><a href="product-add.html">Cargar productos</a></li>
+					<!-- solo logueado <li><a href="">Cargar productos</a></li> -->
 				</ul>
 	
 				<ul class="right-navbar">
-					<li><a href="profile.html">
-							Nombre del usuario <i class="fas fa-user"></i>
+					<!-- Solo logueado <li><a href="profile.html">
+								Nombre del usuario <i class="fas fa-user"></i>
+							</a>
+						</li>
+						<li>
+							<form action="" method="post">
+								<button class="logout" type="submit">
+									Cerrar sesión <i class="fas fa-sign-in-alt"></i>
+								</button>
+							</form>
+						</li> -->
+					<li>
+						<a href="register.html">Creá tu cuenta <i class="far fa-address-card"></i>
 						</a>
 					</li>
 					<li>
-						<form action="" method="post">
-							<button class="logout" type="submit">
-								Cerrar sesión <i class="fas fa-sign-in-alt"></i>
-							</button>
-						</form>
+						<a href="login.html">Ingresá <i class="fas fa-sign-in-alt"></i></a>
 					</li>
-					<!-- Solo deslogueado <li>
-								<a href="register.html">Creá tu cuenta <i class="far fa-address-card"></i>
-								</a>
-							</li>
-							<li>
-								<a href="login.html">Ingresá <i class="fas fa-sign-in-alt"></i></a>
-							</li> -->
 				</ul>
 			</nav>
 		</div>
@@ -70,32 +82,32 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Editar mi perfil</h2>
+				<h2 class="products-title">Registrate</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-				<div  class="formulario-pe">
-              		<form action="/views/profile.ejs" method="GET">
-                 		<p><label for="email">Email</label></p>
-                    	<p><input type="text" id="Email" name="email"</p>
+				<div class="formulario-register">
+					<form action="/views/login.ejs" method="GET">
+                		<p><label for="email">Email</label></p>
+                		<p><input type="text" id="Email" name="email"</p>
 
-                    	<p><label for="text">Usuario</label></p>
-                    	<p><input type="text" id="Usuario" name="usuario" </p>
+                		<p><label for="text">Usuario</label></p>
+                		<p><input type="text" id="Usuario" name="usuario" </p>
 
-                    	<p><label for="contraseña">Contraseña</label></p>
-                    	<p><input type="password" id="Contraseña" name="contraseña"</p>
+                		<p><label for="contraseña">Contraseña</label></p>
+                		<p><input type="password" id="Contraseña" name="contraseña"</p>
 
-                    	<p><label for="fecha">Fecha de Nacimiento</label></p>
-                    	<p><input type="number" id="Fecha de Nacimiento" name="Fecha de Nacimiento"></p>
+                		<p><label for="fecha">Fecha de Nacimiento</label></p>
+                		<p><input type="number" id="Fecha de Nacimiento" name="Fecha de Nacimiento"></p>
 
-                    	<p><label for="numérico">Numero de Documento</label></p>
-                    	<p><input type="number" id="Numero de Documento" name="Numero de Documento"></p>
+                		<p><label for="numérico">Numero de Documento</label></p>
+                		<p><input type="number" id="Numero de Documento" name="Numero de Documento"></p>
 
-                    	<p><label for="file">Foto de Perfil</label></p>
-                    	<p><input type="file" id="Foto de Perfil" name="Foto de Perfil"></p>
+                		<p><label for="file">Foto de Perfil</label></p>
+                		<p><input type="file" id="Foto de Perfil" name="Foto de Perfil"></p>
 
-                    	<p><input type="submit" value="Enviar"></p>
-                	</form>
-            	</div>
+               			<p><input type="submit" value="Enviar"></p>
+					</form>
+				</div>
 
 	<!-- footer -->
 	<footer class="main-footer">
