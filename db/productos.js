@@ -3,7 +3,7 @@
 // Los datos deben ser coherentes con la información pedida en el formulario de carga de productos.
 // La información de los productos debe mostrarse en todos los lugares de la maqueta en donde aparezca un listado de productos por ejemplo en home y en  “mi perfil”.
 
-let datosProductos = [
+datosProductos : [
     {
         nombreDelProducto: "Bugatti Chiron Sport",
         descripcion: "Vehiculo del año 2019 0km, disponible en rojo, azul y negro",
