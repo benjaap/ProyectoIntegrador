@@ -3,7 +3,7 @@
 // Los datos deben ser coherentes con la información pedida en el formulario de carga de productos.
 // La información de los productos debe mostrarse en todos los lugares de la maqueta en donde aparezca un listado de productos por ejemplo en home y en  “mi perfil”.
 
-datosProductos : [
+datosProductos = [
     {
         nombreDelProducto: "Bugatti Chiron Sport",
         descripcion: "Vehiculo del año 2019 0km, disponible en rojo, azul y negro",
@@ -27,12 +27,12 @@ datosProductos : [
     {
         nombreDelProducto: "Aston Martin DBS SUPERLEGGERA COUPE",
         descripcion: "Vehiculo del año 2020 con 2.500km, perfecto estado, disponible unicamente en negro",
-        fechaDeCarga: "09/10/21",
+        fechaDeCarga: "09/10/2021",
     }, 
     {
         nombreDelProducto: "Brabus G700",
         descripcion: "Vehiculo del año 2020 0km disponible en negro y azul",
-        fechaDeCarga: "29/09/2021",
+        fechaDeCarga: "29/01/2022",
     }, 
     {
         nombreDelProducto: "Mercedes Benz GT 63 AMG",
@@ -54,5 +54,6 @@ datosProductos : [
         descripcion: "Vehiculo del año 2018 con 18.000km, en muy buen estado, disponible unicamente en negro",
         fechaDeCarga: "10/1/2022",
     }, 
-]
-// module.exports=datosProductos;
+];
+
+module.exports=datosProductos;
