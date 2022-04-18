@@ -8,7 +8,7 @@ const productController = {
         res.render('Add', { title:'Agregar Producto' })
     },
     searchResult: function(req,res){
-        res.render('searchResults', { title:'Search Result'})
+        res.render('searchResult', { title:'Search Result'})
     },
 }
 

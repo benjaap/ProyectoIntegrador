@@ -3,9 +3,7 @@ const comentariosController = require("../controllers/comentariosController");
 var router = express.Router();
 
 /* GET home page. */
- router.get('/',function(req, res){
-  res.send('')
-  });
+ router.get('/',);
 
 module.exports = router;
 

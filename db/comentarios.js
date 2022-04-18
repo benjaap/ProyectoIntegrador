@@ -2,3 +2,18 @@
 // nombre de usuario.
 // texto del comentario.
 // imagen de perfil: no es necesario que coloques una imagen de perfil. Podés dejar la que está ahora en la maqueta.
+comentarios = [
+    {
+        usuario: "frv",
+        textoDelComentario:""
+    },
+    {
+        usuario: "",
+        textoDelComentario:""
+    },
+    {
+        usuario: "",
+        textoDelComentario:""
+    }
+
+]
