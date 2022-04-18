@@ -164,8 +164,32 @@ hr {
 
 /*====== Products ======*/
 .products-wrapper {
+  align-content: center;
   margin-top: 30px;
   margin-bottom: 30px;
+  
+}
+
+.pp2{
+  align-content: flex-end;
+  width: 50%;
+  margin-top: 5%;
+  border-width: 30%;
+  
+}
+
+.pp3{
+  align-content: center;
+
+}
+
+.row{
+  align-content: center;
+  justify-content: space-around;
+}
+
+.col-12{
+  padding-left: 5%;
 }
 
 .products-title {
@@ -175,6 +199,8 @@ hr {
 }
 
 .product-box {
+  display: flex;
+  flex-direction: row;
   background-color: #000000;
   border-radius: 5px;
   overflow: hidden;
