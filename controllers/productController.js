@@ -3,7 +3,11 @@ const comentarios = require('../db/comentarios')
 
 const productController = {
     detalle: function(req, res){
-        let id= req.params.id;
+        let idProducto = req.params.id;
+        if(id==undefined){
+            return res.send('No ingresaste un producto');
+        }
+        res.render('product')
         // encontrar el producto con el id que te llego
 
         // todos los comentarios de ese producto

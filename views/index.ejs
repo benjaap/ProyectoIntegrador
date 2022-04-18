@@ -9,7 +9,7 @@
 	
 	<!-- Banner -->
 	<div class="banner">
-		<img src="../public/images/banner-autos-1.jpg" alt="">
+		<img src="../public/images/banner-autos-1.jpg" alt="imagen banner">
 	</div>
 	<!-- /Banner -->
 
@@ -17,14 +17,14 @@
 	<div class="pp3">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Novedades</h2>
+				<h2 class="products-title">Vehículos:</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
 			
 			<div class="pp2">
-				<% for(i=0;i<lista.length;i++){%>
+				<% for(i=0;i<lista.length;i++){ %>
 					<section class="product-box">
-						<a href="/product/detalle/<%=lista[i]id">
+						<a href="/product/detalle">
 						<figure class="product-box_image">
 							<img src="<%= lista[i].imagen %>" alt="Buggati Chiron">
 						</figure>
@@ -34,7 +34,7 @@
 							<div>
 							<p><%= lista[i].descripcion %></p>
 							</div>
-							<p>Comentarios: 12</p>
+							
 						</article>
 					</a>
 				</section>
@@ -42,41 +42,6 @@
 			</div>
 		</div>
 	</div>
-
-	<!-- /Novedades -->
-	<!-- Más comentados -->
-	<div class="pp3">
-		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Más comentados</h2>
-			</div>
-			<!-- Show the "ultimos" products -->
-			<div class="pp2">
-				<% for(i=5;i<10;i++){%>
-					<section class="product-box">
-						<a href="/product/detalle">
-						<figure class="product-box_image">
-							<img src="<%= lista[i].imagen %>" alt="Buggati Chiron">
-						</figure>
-						<article class="product-box_data">
-							<div>
-								<h2><%= lista[i].nombreDelProducto %></h2>
-							</div>
-							<div>
-								<p><%= lista[i].descripcion %></p>
-							</div>
-							<div>
-								<p>Comentarios: 12</p>
-							</div>
-						</article>
-					</a>
-				</section>
-			<% } %>
-			</div>
-		</div>
-	</div>
-	<!-- /Más comentados -->
-
 
 	<!-- footer -->
 	<%- include('./partials/footer') %>

@@ -5,15 +5,17 @@
 comentarios = [
     {
         usuario: "frv",
-        textoDelComentario:""
+        textoDelComentario:"Cuantos caballos de fuerza tiene?"
     },
     {
-        usuario: "",
-        textoDelComentario:""
+        usuario: "Juan",
+        textoDelComentario:"Muy lindo auto, velocidad maxima?"
     },
     {
-        usuario: "",
-        textoDelComentario:""
+        usuario: "Pablo",
+        textoDelComentario:"Tremendo!"
     }
 
 ]
+
+module.exports=comentarios;
