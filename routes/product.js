@@ -6,7 +6,7 @@ router.get('/detalle', productController.detalle);
 
 router.get('/Add', productController.Add);
 
-router.get('/searchResult', productController.searchResult);
+router.get('/searchesult', productController.searchResult);
 
 module.exports = router;
 

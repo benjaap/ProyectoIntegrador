@@ -5,6 +5,7 @@
 
 lista = [
     {
+        id=1,
         nombreDelProducto: "Bugatti Chiron Sport",
         descripcion: "Vehiculo del año 2019 0km, disponible en rojo, azul y negro",
         fechaDeCarga: "08/03/2020",

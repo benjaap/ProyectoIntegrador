@@ -186,6 +186,7 @@ hr {
 .row{
   align-content: center;
   justify-content: space-around;
+
 }
 
 .col-12{
@@ -219,7 +220,6 @@ hr {
 .product-box_data {
   padding: 15px;
   position: relative;
-  display: flex;
   align-items: center;
   flex-wrap: wrap;
   color: rgb(255, 255, 255);

@@ -22,15 +22,15 @@
 			<!-- Show the "ultimos" products -->
 			
 			<div class="pp2">
-				<% for(i=0;i<5;i++){%>
+				<% for(i=0;i<lista.length;i++){%>
 					<section class="product-box">
-						<a href="/product/detalle">
+						<a href="/product/detalle/<%=lista[i]id">
 						<figure class="product-box_image">
 							<img src="<%= lista[i].imagen %>" alt="Buggati Chiron">
 						</figure>
 						<article class="product-box_data">
 							
-							<%= lista[i].nombreDelProducto %>
+							<h2><%= lista[i].nombreDelProducto %></h2>
 							<div>
 							<p><%= lista[i].descripcion %></p>
 							</div>
@@ -59,12 +59,15 @@
 							<img src="<%= lista[i].imagen %>" alt="Buggati Chiron">
 						</figure>
 						<article class="product-box_data">
-							
-							<%= lista[i].nombreDelProducto %>
 							<div>
-							<p><%= lista[i].descripcion %></p>
+								<h2><%= lista[i].nombreDelProducto %></h2>
 							</div>
-							<p>Comentarios: 12</p>
+							<div>
+								<p><%= lista[i].descripcion %></p>
+							</div>
+							<div>
+								<p>Comentarios: 12</p>
+							</div>
 						</article>
 					</a>
 				</section>
