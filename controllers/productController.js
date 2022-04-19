@@ -1,18 +1,8 @@
-const productos = require('../db/productos')
-const comentarios = require('../db/comentarios')
+const productos = require('../db/productos');
 
 const productController = {
     detalle: function(req, res){
-        let idProducto = req.params.id;
-        if(id==undefined){
-            return res.send('No ingresaste un producto');
-        }
-        res.render('product')
-        // encontrar el producto con el id que te llego
-
-        // todos los comentarios de ese producto
-
-        res.render('product', { producto: product, comentarios: coments})
+        res.render('product', { producto: lista});
     },
     Add: function(req, res){
         res.render('Add', { title:'Agregar Producto' })

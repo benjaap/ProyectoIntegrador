@@ -2,7 +2,7 @@
 // nombre de usuario.
 // texto del comentario.
 // imagen de perfil: no es necesario que coloques una imagen de perfil. Podés dejar la que está ahora en la maqueta.
-comentarios = [
+comentario = [
     {
         usuario: "frv",
         textoDelComentario:"Cuantos caballos de fuerza tiene?"
@@ -16,6 +16,6 @@ comentarios = [
         textoDelComentario:"Tremendo!"
     }
 
-]
+];
 
-module.exports=comentarios;
+module.exports=comentario;

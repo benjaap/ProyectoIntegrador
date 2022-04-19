@@ -285,6 +285,12 @@ hr {
   box-shadow: 0 0 5px var(--green);
 }
 
+.detalle-prod {
+  display:flexbox;
+}
+
+
+
 /*====== Footer ======*/
 .main-footer {
   background-color: #ffffff;
@@ -327,7 +333,7 @@ hr {
 
 /*====== Product Detail ======*/
 .product-detail {
-  background-color: #ffffff;
+  background-color:lightgrey;
   border-radius: 8px;
   overflow: hidden;
 }

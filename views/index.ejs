@@ -9,7 +9,7 @@
 	
 	<!-- Banner -->
 	<div class="banner">
-		<img src="../public/images/banner-autos-1.jpg" alt="imagen banner">
+		<img src="../public/images/banner-autos-1.jpg" alt="">
 	</div>
 	<!-- /Banner -->
 
@@ -25,20 +25,19 @@
 				<% for(i=0;i<lista.length;i++){ %>
 					<section class="product-box">
 						<a href="/product/detalle">
-						<figure class="product-box_image">
-							<img src="<%= lista[i].imagen %>" alt="Buggati Chiron">
-						</figure>
-						<article class="product-box_data">
-							
-							<h2><%= lista[i].nombreDelProducto %></h2>
-							<div>
-							<p><%= lista[i].descripcion %></p>
-							</div>
-							
-						</article>
-					</a>
-				</section>
-			<% } %>
+							<figure class="product-box_image">
+								<img src="<%= lista[i].imagen %>" alt="Foto Producto">
+							</figure>
+							<article class="product-box_data">
+								<h2><%= lista[i].nombreDelProducto %></h2>
+								<div>
+									<p><%= lista[i].descripcion %></p>
+								</div>
+								
+							</article>
+						</a>
+					</section>
+				<% } %>
 			</div>
 		</div>
 	</div>
