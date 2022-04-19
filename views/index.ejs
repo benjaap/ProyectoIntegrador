@@ -20,11 +20,9 @@
 				<h2 class="products-title">Vehículos:</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			
 			<div class="pp2">
-				<% for(i=0;i<lista.length;i++){ %>
 					<section class="product-box">
-						<a href="/product/detalle">
+						<a href="/product/detalle/<%= lista[i].id %>">
 							<figure class="product-box_image">
 								<img src="<%= lista[i].imagen %>" alt="Foto Producto">
 							</figure>
@@ -34,16 +32,15 @@
 									<p><%= lista[i].descripcion %></p>
 								</div>
 								<div>
-									<p><%= comentario[i].usuario %></p>
+									<p><%= comentario.usuario %></p>
 								</div>
 								<div>
-									<p><%= comentario[i].textoDelComentario %></p>
+									<p><%= comentario.textoDelComentario %></p>
 								</div>
 								
 							</article> 
 						</a>
 					</section>
-				<% } %>
 			</div>
 		</div>
 	</div>
