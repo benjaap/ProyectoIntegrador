@@ -19,9 +19,10 @@
 			<div class="col-12">
 				<h2 class="products-title">Vehículos:</h2>
 			</div>
-			<!-- Show the "ultimos" products -->
 			<div class="pp2">
-					<section class="product-box">
+					<% for(let i=0; i<10;i++){%>
+				<section class="product-box">
+				
 						<a href="/product/detalle/<%= lista[i].id %>">
 							<figure class="product-box_image">
 								<img src="<%= lista[i].imagen %>" alt="Foto Producto">
@@ -30,17 +31,13 @@
 								<h2><%= lista[i].nombreDelProducto %></h2>
 								<div>
 									<p><%= lista[i].descripcion %></p>
+									<p><% comentario.usuario %></p>
+									<p><% comentario.textoDelComentario %></p>
 								</div>
-								<div>
-									<p><%= comentario.usuario %></p>
-								</div>
-								<div>
-									<p><%= comentario.textoDelComentario %></p>
-								</div>
-								
 							</article> 
 						</a>
-					</section>
+				</section>
+				<% } %>
 			</div>
 		</div>
 	</div>

@@ -9,7 +9,7 @@
 			<div class="row align-items-center">
 				<div class="col-5 col-md-2">
 					<a href="/index" class="main-header_home-link">
-						<img src="./images/logo-mercado-liebre.svg">
+						<img src="https://mma.prnewswire.com/media/701841/carwow_Logo.jpg?p=facebook">
 					</a>
 				</div>
 	
@@ -34,18 +34,17 @@
 	
 			<nav class="main-navbar">
 				<ul class="left-navbar">
-					<li><a href="/index">Todos los productos</a></li>
+					<li><a href="/">Todos los productos</a></li>
 					<li><a href="/product/add">Cargar productos</a></li>
 				</ul>
-	
 				<ul class="right-navbar">
-					<li><a href="/users/profile">
-							Nombre del usuario <i class="fas fa-user"></i>
+					<li><a href="/user/profile">
+							<%= comentario[i].usuario %> <i class="fas fa-user"></i>
 						</a>
 					</li>
 					<li>
-						<form action="" method="post">
-							<button class="logout" type="submit">
+						<form action="/" method="GET">
+							<button class="right-navbar" type="submit">
 								Cerrar sesión <i class="fas fa-sign-in-alt"></i>
 							</button>
 						</form>

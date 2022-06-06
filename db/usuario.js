@@ -9,3 +9,5 @@ let datosUsuario = {
     fechaDeNacimiento:"10/10/2000",
     numeroDeDocumento:"41.003.201",
 }
+
+module.exports=datosUsuario;

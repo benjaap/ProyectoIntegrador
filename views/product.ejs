@@ -14,7 +14,7 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"> </h2> 
 			<p class="product-detail-description">
-				<a href="/product/add">Editar</a>
+				<a href="/product/add">Agregar un Producto</a>
 			</p>
 		</div>
 		<div class="product-detail">
@@ -22,29 +22,24 @@
 				<article class="col-12 col-lg-8 product-detail-info">
 					<img src= "<%= lista[i].imagen %>" alt="" class="product-detail-img">
 					<h1><%= lista[i].nombreDelProducto %></h1>
-					<p >
+					<p>
 					<%= lista[i].descripcion %>
 					</p>
 	
 				</article>
-				
-				
-				
 				<div class="col-12 col-lg-4">
 					<section class="comments">
 						<article>
 							<img src="https://via.placeholder.com/35" alt="">
 							<div class="data">
 								<h2 class="user">
-								<strong></strong> <a href="/users/profile"> <%= comentario[i].usuario %> </a> </strong>
+								<strong></strong> <a href="/users/profile"> <%= comentario.usuario %>:</a> </strong>
 								</h2>
 								<p>
-									<%= comentario[i].textoDelComentario %>
+									<%= comentario.textoDelComentario %>
 								</p>
 							</div>
 						</article>
-						
-
 					</section>
 					<form class="form" action="/product/detalle" method="GET">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
@@ -55,7 +50,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- /product detail -->
 
 	<!-- footer -->
 	<%- include('./partials/footer') %>
