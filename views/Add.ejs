@@ -6,7 +6,7 @@
 
 <body>
 	<!-- Header -->
-	<%- include('./partials/headerLogueado') %>
+	<%-include('./partials/headerLogueado')%>
 	<!-- /Header -->
 
 	<!-- Novedades -->
@@ -15,26 +15,26 @@
 			<div class="col-12">
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
-			<!-- Show the "ultimos" products -->
 			
-				<div class="formulario-product-add">
-					<form action="/" method="GET">
-						<p><label for="imagen">Imagen:</label></p>
-						<p><input type="file" id="Imagen" name="Imagen"></p>
+			<div class="formulario-product-add">
+				<form action="/" method="GET">
+					<p><label for="imagen">Imagen:</label></p>
+					<p><input type="file" id="Imagen" name="Imagen"></p>
 
-						<p><label for="te">Nombre del Producto:</label></p>
-						<p><input type="text" id="Nombre del Producto" name="Nombre del Producto"></p>
+					<p><label for="te">Nombre del Producto:</label></p>
+					<p><input type="text" id="Nombre del Producto" name="Nombre del Producto"></p>
 
-						<p><label for="text">Descripción:</label></p>
-						<p><input type="text" id="Descripción" name="Descripción"></p>
+					<p><label for="text">Descripción:</label></p>
+					<p><input type="text" id="Descripción" name="Descripción"></p>
 
-						<p><label for="fecha">Fecha de Carga</label></p>
-						<p><input type="date" id="Fecha de Carga" name="Fecha de Carga"></p>
+					<p><label for="fecha">Fecha de Carga</label></p>
+					<p><input type="date" id="Fecha de Carga" name="Fecha de Carga"></p>
 
-						<p><input type="submit" value="Enviar"></p>
-					</form>
-				</div>
-	<!-- Novedades -->
+					<p><input type="submit" value="Enviar"></p>
+				</form>
+			</div>
+		</div>
+	</div>
 
 	<!-- footer -->
 	<%- include('./partials/footer') %>

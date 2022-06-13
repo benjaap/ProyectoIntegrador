@@ -14,65 +14,34 @@
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"> </h2> 
 			<p class="product-detail-description">
-				<a href="/product/Add">Editar</a>
+				<a href="/product/add">Agregar un Producto</a>
 			</p>
 		</div>
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src= "/images/products/producto1.jpg" alt="" class="product-detail-img">
-					<p class="product-detail-description">
-						Descripción corta del producto. En la página principal solo se ven 2 líneas de estar descripción.Lorem ipsum dolor,
-						sit amet consectetur adipisicing elit. Tae ipsam amet eum, totam dolore libero illo unde? Consectetur dolorem neque
-						veritatis.</p>
+					<img src= "<%= lista[i].imagen %>" alt="" class="product-detail-img">
+					<h1><%= lista[i].nombreDelProducto %></h1>
+					<p>
+					<%= lista[i].descripcion %>
+					</p>
+	
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
 						<article>
 							<img src="https://via.placeholder.com/35" alt="">
 							<div class="data">
-								<p class="user">
-								<strong> <a href="/users/profile">Nombre usuario: </a> </strong>
-								 Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora doloribus enim aspernatur fugit corrupti suscipit sit dolore magnam, praesentium explicabo inventore molestias facilis labore. Fugit ipsa mollitia odit inventore consequuntur.</p>
+								<h2 class="user">
+								<strong></strong> <a href="/users/profile"> <%= comentario.usuario %>:</a> </strong>
+								</h2>
+								<p>
+									<%= comentario.textoDelComentario %>
+								</p>
 							</div>
 						</article>
-						<article>
-							<img src="https://via.placeholder.com/35" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/users/profile">Nombre usuario: </a> </strong>
-									Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet consectetur.</p>
-							</div>
-						</article>
-						<article>
-							<img src="https://via.placeholder.com/35" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="/users/profile">Nombre usuario: </a> </strong>
-									Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									</p>
-							</div>
-						</article>
-						<article>
-							<img src="https://via.placeholder.com/35" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="profile.html">Nombre usuario: </a> </strong>
-									Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet.</p>
-							</div>
-						</article>
-						<article>
-							<img src="https://via.placeholder.com/35" alt="">
-							<div class="data">
-								<p class="user">
-									<strong> <a href="profile.html">Nombre usuario: </a> </strong>
-									Texto del comentario que escribió el usuario Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									Tempora doloribus enim aspernatur fugit corrupti suscipit sit dolore</p>
-							</div>
-						</article>
-
 					</section>
-					<form class="form" action="" method="POST">
+					<form class="form" action="/product/detalle" method="GET">
 						<input class="form-input" type="text" value="" placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 					</form>
@@ -81,7 +50,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- /product detail -->
 
 	<!-- footer -->
 	<%- include('./partials/footer') %>
