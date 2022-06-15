@@ -14,7 +14,6 @@ const userController = {
     },
     register: function(req, res){
         res.render('register', {title:"Register"})  
-
     },
     store: function(req,res){
             let errors = {}

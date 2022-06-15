@@ -3,10 +3,8 @@ const data = require('../db/productos');
 
 const productController = {
     detalle: function(req, res){
-        res.render('product', {title:'Express' });
-        res.render('product', {comentario: data2.comentario});
-        res.render('product', {comentario: data.lista});
-
+        console.log('DATA', data)
+        res.render('product', {comentario:data2, productos:data });
     },
     Add: function(req, res){
         res.render('Add', { title:'Agregar Producto' })
