@@ -18,26 +18,30 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 				<div class="formulario-register">
-					<form action="/user/login" method="POST">
-                		<p><label for="email">Email</label></p>
-                		<p><input type="text" id="Email" name="email"></p>
+					<form action="/user/register" method="POST" enctype="multipart/form-data">
+	
+                		<label for="email">Email</label>
+                		<input type="text" id="Email" name="email">
 
-                		<p><label for="text">Usuario</label></p>
-                		<p><input type="text" id="Usuario" name="usuario"></p>
+                		<label for="text">Nombre</label></p>
+                		<input type="text" id="name" name="name">
 
-                		<p><label for="contraseña">Contraseña</label></p>
-                		<p><input type="password" id="Contraseña" name="contraseña"></p>
+						<label for="text">Apellido</label></p>
+                		<input type="text" id="surname" name="surname">
 
-                		<p><label for="fecha">Fecha de Nacimiento</label></p>
-                		<p><input type="number" id="Fecha de Nacimiento" name="Fecha de Nacimiento"></p>
+                		<label for="contraseña">Contraseña</label></p>
+                		<input type="password" id="password" name="password">
 
-                		<p><label for="numérico">Numero de Documento</label></p>
-                		<p><input type="number" id="Numero de Documento" name="Numero de Documento"></p>
+                		<label for="fecha">Fecha de Nacimiento</label>
+                		<input type="date" id="Fecha-de-Nacimiento" name="fecha_de_nacimiento">
 
-                		<p><label for="file">Foto de Perfil</label></p>
-                		<p><input type="file" id="Foto de Perfil" name="Foto de Perfil"></p>
+                		<label for="numérico">Numero de Documento</label>
+                		<input type="number" id="Numero-de-Documento" name="numero_de_documento">
 
-               			<p><input type="submit" value="Enviar"></p>
+                		<label for="file">Foto de Perfil</label>
+                		<input type="file" id="Foto-de-Perfil" name="fotodeperfil">
+
+               			<input type="submit" value="Enviar">
 					</form>
 				</div>
 		</div>
