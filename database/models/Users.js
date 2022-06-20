@@ -40,14 +40,13 @@ module.exports = function (sequelize, dataTypes) {
 
     }
 
-
+    let config = {
+        timestamps:true,
+       };
+    
+       const Users = sequelize.define(alias, cols, config);
+    
+       return Users;
 
     }
 
-   let config = {
-    timestamps:true,
-   };
-
-   const Users = sequelize.define(alias, cols, config);
-
-   return Users;
