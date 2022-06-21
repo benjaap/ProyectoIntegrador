@@ -2,11 +2,10 @@ var express = require('express');
 const productController = require('../controllers/productController');
 var router = express.Router();
 
-router.get('/detalle/:id?', productController.detalle);
+router.get('/detalle/:id', productController.show);//REVISAR
+router.get('/list', productController.list);//REVISAR
+router.get('/store', productController.store)//REVISAR
 
-router.get('/Add', productController.Add);
-
-router.get('/searchResult', productController.searchResult);
 
 module.exports = router;
 

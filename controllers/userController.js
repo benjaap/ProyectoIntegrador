@@ -14,8 +14,12 @@ const userController = {
         const user = await db.users.findOne({where:{email:email}})
         if (user) {
             if(bycript.compareSync(password,user.password_)){
-                res.send("Logueado")
+                const auth = {id: user.id, name: user.name_, email: user.email }
+                req.session.cookie.maxAge = 3600000;
+                req.session.auth = auth;
+                res.redirect('/')
             }
+
             else{
                 res.send("Credenciales incorrectas")
             }
@@ -33,6 +37,11 @@ const userController = {
     register: function(req, res){
         res.render('register', {title:"Register"})  
     },
+    logout: function(req, res){
+        req.session.destroy();
+        res.redirect('/')
+    },
+
     store: function(req,res){
             let errors = {}
             if(req.body.email === ""){

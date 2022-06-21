@@ -39,23 +39,16 @@
 				</ul>
 				<ul class="right-navbar">
 					<li><a href="/user/profile">
-							<%= comentario[i].usuario %> <i class="fas fa-user"></i>
+							<%= auth.id %> <i class="fas fa-user"></i>
 						</a>
 					</li>
 					<li>
-						<form action="/" method="GET">
+						<form action="/user/logout" method="POST">
 							<button class="right-navbar" type="submit">
 								Cerrar sesión <i class="fas fa-sign-in-alt"></i>
 							</button>
 						</form>
 					</li>
-					<!-- Solo deslogueado <li>
-						<a href="register.html">Creá tu cuenta <i class="far fa-address-card"></i>
-						</a>
-					</li>
-					<li>
-						<a href="login.html">Ingresá <i class="fas fa-sign-in-alt"></i></a>
-					</li> -->
 				</ul>
 			</nav>
 		</div>

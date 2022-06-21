@@ -16,12 +16,20 @@
 				<h2 class="products-title">Resultados de búsqueda</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> <i>///////////////////////////////////////// <br> Acá van los resultados de búsqueda. <br>
-			Eliminen estás líneas y cosntruyan la página de resultados de búsqueda. <br>
-			////////////////
+			<h2 class="col-12"> 
+				lista de productos
 			</h2>
+			<form action="/product/list" method="GET" enctype="multipart/form-data">
+				<label>Buscar</label>
+				<input type="search" name="search" placeholder="Ferrari F50">
+				<input type="submit" value="Buscar">
+			</form>
 
-
+			<% productos.forEach(producto => %>
+				<div>
+					<p> <%= producto.name %> </p>
+				</div>
+			<% ) %>
 	<!-- footer -->
 	<%- include('./partials/footer') %>
 	<!-- /footer -->

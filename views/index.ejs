@@ -4,7 +4,11 @@
 <%- include('./partials/head') %>
 <body>
 	<!-- Header -->
-	<%- include('./partials/header') %>
+	<% if(!auth){%>
+		<%- include('./partials/header')%>
+	<% } else{ %> 
+		<%- include('./partials/headerLogueado')%> 
+	<% } %>
 	<!-- /Header -->
 	
 	<!-- Banner -->
@@ -14,7 +18,7 @@
 	<!-- /Banner -->
 
 	<!-- Novedades -->
-	<div class="pp3">
+	<!-- <div class="pp3">
 		<div class="row">
 			<div class="col-12">
 				<h2 class="products-title">Vehículos:</h2>
@@ -23,7 +27,7 @@
 					<% for(let i=0; i<10;i++){%>
 				<section class="product-box">
 				
-						<a href="/product/detalle/<%= lista[i].id %>">
+						<a href="/product/detalle/:id">
 							<figure class="product-box_image">
 								<img src="<%= lista[i].imagen %>" alt="Foto Producto">
 							</figure>
@@ -40,7 +44,7 @@
 				<% } %>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<!-- footer -->
 	<%- include('./partials/footer') %>
