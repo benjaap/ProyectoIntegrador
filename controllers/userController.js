@@ -1,10 +1,28 @@
-const db = require('../db/config/config');
+const db = require('./../database/models/index');
+const bycript = require('bcryptjs')
 const userController = {
     user: function(req, res){
         res.render('index', { title:'Usuarios' })
     },
     login: function(req, res){
         res.render('login', {title:'login'})
+    },
+    processLogin: async function(req, res){
+        const email = req.body.email
+        const password = req.body.password
+
+        const user = await db.users.findOne({where:{email:email}})
+        if (user) {
+            if(bycript.compareSync(password,user.password_)){
+                res.send("Logueado")
+            }
+            else{
+                res.send("Credenciales incorrectas")
+            }
+        } 
+        else {
+            res.send("Usuario no encontrado")
+        }
     },
     profile: function(req, res){
         res.render('profile', {title:'profile'})
@@ -17,15 +35,15 @@ const userController = {
     },
     store: function(req,res){
             let errors = {}
-            if(req.body.email == ""){
+            if(req.body.email === ""){
                 errors.message = "El email es obligatorio";
                 console.log(errors) // Guardar errors en locals
                 return res.render('register')
-            } else if(req.body.password == ""){
+            } else if(req.body.password === ""){
                 errors.message = "La contraseña es obligatoria";
                 console.log(errors) // Guardar errors en locals
                 return res.render('register')
-            } else if(req.body.retypePassword == ""){
+            } else if(req.body.retypePassword === ""){
                 errors.message = "La contraseña es obligatoria";
                 console.log(errors) // Guardar errors en locals
                 return res.render('register')
@@ -33,13 +51,13 @@ const userController = {
                 errors.message = "Las contraseñas no coinciden";
                 console.log(errors) // Guardar errors en locals
                 return res.render('register')
-            } else if (req.file.mimetype !== 'image/png' && req.file.mimetype !== 'image/jpg' && req.file.mimetype !== 'image/jpeg'){
+            }else if (req.file.mimetype != 'image/png' && req.file.mimetype != 'image/jpg' && req.file.mimetype != 'image/jpeg'){
                 errors.message = "El archivo debe ser jpg o png";
                 console.log(errors) // Guardar errors en locals
                 return res.render('register')
             }else {
-                users.findOne({
-                    where: [{email: req.body.email}]
+                db.users.findOne({
+                    where: {email: req.body.email}
                 })
                 .then(function(user){
                     if(user != null){
@@ -47,18 +65,24 @@ const userController = {
                         console.log(errors) // Guardar errors en locals
                         return res.render('register')
                     }else {
-                        let user = {
-                            name: req.body.name,
+                        let newUser = {
+                            name_: req.body.name,
                             email: req.body.email,
-                            password: bcrypt.hashSync(req.body.password, 10),
-                            avatar: req.file.filename
+                            password_: bycript.hashSync(req.body.password, 10),
+                            avatar: req.file.filename,
+                            birth_date: req.body.fecha_de_nacimiento,
+                            dni: req.body.numero_de_documento,
+                            surname: req.body.surname,
+                            created_at: new Date(),
+                            updated_at: new Date()
                         }
-                        users.create(user)
-                            .then(user => {
-                                return res.redirect('/')
+                        db.users.create(newUser)
+                            .then(data => {
+                                res.redirect('/')
                             })
                             .catch(e=>{
                                 console.log(e)
+                                res.send("Error al crear el usuario")
                             })
                     }
                 }

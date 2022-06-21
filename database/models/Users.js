@@ -7,13 +7,13 @@ module.exports = function (sequelize, dataTypes) {
             primaryKey: true,
             type: dataTypes.INTEGER
         },
-        name: {
+        name_: {
             type: dataTypes.STRING
         },
         surname: {
             type: dataTypes.STRING
         },
-        birthdate : {
+        birth_date : {
             type: dataTypes.DATE,
             allowNull:true,
         },
@@ -26,9 +26,10 @@ module.exports = function (sequelize, dataTypes) {
             allowNull: true,
         },
         email: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING, 
+            unique: true
         },
-        password: {
+        password_: {
             type: dataTypes.STRING
         },
         dni: {
@@ -40,14 +41,16 @@ module.exports = function (sequelize, dataTypes) {
 
     }
 
-
-
-    }
-
    let config = {
     timestamps:true,
+    createdAt: false,
+    updatedAt: false
    };
 
    const Users = sequelize.define(alias, cols, config);
 
    return Users;
+
+
+}
+
