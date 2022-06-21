@@ -21,7 +21,6 @@ module.exports = function (sequelize, dataTypes) {
             type: dataTypes.STRING
         },
         users_id: {
-            autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER
         },

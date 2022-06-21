@@ -3,19 +3,19 @@ module.exports = function(sequelize, dataTypes){
 
     let cols = {
         id:  {
-            autoIncrement: true,
+            // autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER
         },
 
         users_id: {
-            autoIncrement: true,
+            // autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER
         },
 
         followers_id: {
-            autoIncrement: true,
+            // autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER
         },

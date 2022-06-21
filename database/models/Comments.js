@@ -14,12 +14,12 @@ module.exports = function (sequelize, dataTypes) {
             allowNull:true,
         },
         users_id: {
-            autoIncrement: true,
+            // autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER
         },
         product_id: {
-            autoIncrement: true,
+            // autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER
         },
