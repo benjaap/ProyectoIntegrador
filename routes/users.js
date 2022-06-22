@@ -25,8 +25,10 @@ router.post("/register", upload.single('fotodeperfil'), userController.store);
 router.get('/login',userController.login);
 router.post('/login', userController.processLogin)
 //edicion de perfil 
-router.get('/editProfile',userController.editProfile)
-router.get('/profile',userController.profile)
+router.get('/profile/:id',userController.profile)
+router.get('/editProfile/:id',userController.editProfile)
+router.get('/editProfile/store', upload.single('fotodeperfil'), userController.store)
+
 //logout
 router.post('/logout', userController.logout)
 
