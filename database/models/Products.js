@@ -37,7 +37,7 @@ module.exports = function (sequelize, dataTypes) {
         updatedAt: false
        };
     
-       const Products = sequelize.define(alias, cols, config);
+       const Product = sequelize.define(alias, cols, config);
     
        Product.associate = function(models){
            Product.hasMany(models.Comment, {
@@ -54,6 +54,6 @@ module.exports = function (sequelize, dataTypes) {
 
 
 
-       return Products;
+       return Product;
 
     }
