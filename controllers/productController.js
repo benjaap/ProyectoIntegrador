@@ -3,8 +3,12 @@ const bycript = require('bcryptjs');
 const {Op} = require('sequelize');
 
 const productController = {
-    show: function(req, res){ //REVISAR
+    show: function(req, res){ 
         let id = req.params.id
+        let auth = null 
+        if(req.session.auth){
+            auth = req.session.auth
+        } 
 
         db.products.findByPk(id, {
             include: [
