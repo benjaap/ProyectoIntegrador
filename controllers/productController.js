@@ -68,7 +68,11 @@ const productController = {
         } 
         res.render('Add', {Title:'Productos', auth})
     },
+<<<<<<< HEAD
     store: function(req, res){
+=======
+    store: function(req, res){ //Revisar
+>>>>>>> 13efd8aacb5f24b9c399896e423b3dee912baf03
         let data = req.body;
         let newProduct = {
             name: req.body.name,
