@@ -1,12 +1,5 @@
 const db = require('./../database/models/index');
-const bycript = require('bcryptjs')
-const productos = require("../db/productos")
-const Usuarios = require("../db/usuario")
-let data = require("../db/usuario")
-let db = require("../database/models")
-let op = db.Sequelize.Op;
 const bycript = require('bcryptjs');
-
 
 const userController = {
     user: function(req, res){
@@ -167,12 +160,6 @@ const userController = {
                             updated_at: new Date()
                         }
 
-                        if (req.file == undefined) {
-                            user.avatar = req.session.user.avatar;    //que use el avatar previo
-                        } else {
-                            user.avatar = req.file.filename;
-                        }                
-
                         db.users.create(newUser)
                             .then(data => {
                                 res.redirect('/')
@@ -182,8 +169,11 @@ const userController = {
                                 res.send("Error al crear el usuario")
                             })
                     }
-                }
-                )
+                })
+                .catch(error =>{
+                    console.log(error)
+                    res.send("Error al conectar con la base de datos")
+                })
             }
         }
     }
