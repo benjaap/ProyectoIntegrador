@@ -32,7 +32,7 @@ const productController = {
         }
         res.render('productList', {productos})
     },
-    store: function(req, res){ //REVISAR
+    store: function(req, res){ //Revisar
         let data = req.body;
         let newProduct = {
             name: req.body.name,
