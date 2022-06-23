@@ -47,7 +47,7 @@ module.exports = function (sequelize, dataTypes) {
     updatedAt: false
    };
 
-   const Users = sequelize.define(alias, cols, config);
+   const User = sequelize.define(alias, cols, config);
 
 //    Users.associate = function(models){
     
@@ -72,7 +72,7 @@ module.exports = function (sequelize, dataTypes) {
 
 
 
-   return Users;
+   return User;
 
 
 }
