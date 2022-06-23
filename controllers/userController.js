@@ -1,7 +1,5 @@
 const db = require('./../database/models/index');
-<<<<<<< HEAD
 const bycript = require('bcryptjs')
-=======
 const productos = require("../db/productos")
 const Usuarios = require("../db/usuario")
 let data = require("../db/usuario")
@@ -9,7 +7,6 @@ let db = require("../database/models")
 let op = db.Sequelize.Op;
 const bycript = require('bcryptjs');
 
->>>>>>> 8cc4a6ceb67cc1cfcf6f09ca515bd1e8410bf6ef
 
 const userController = {
     user: function(req, res){
@@ -48,23 +45,6 @@ const userController = {
     },
 
     profile: function(req, res){
-<<<<<<< HEAD
-        let auth = null 
-        console.log(req.session.auth)
-        if(req.session.auth){
-            auth = req.session.auth
-            db.products.findAll()
-            .then(
-                productos => {
-                    res.render('profile', {title:'profile', auth, productos})
-                }
-            )
-            .catch(e => {res.send("Error de conexion")})
-        }  
-        else{
-            res.redirect('/')
-        }
-=======
         res.render('profile', {title:'profile'})
         const id = req.params.id
 
@@ -96,7 +76,6 @@ const userController = {
         .catch((err)=>{
             console.log(err)
         })
->>>>>>> 8cc4a6ceb67cc1cfcf6f09ca515bd1e8410bf6ef
     },
 
     editProfile: function(req, res){

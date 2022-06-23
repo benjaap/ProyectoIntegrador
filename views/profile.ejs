@@ -49,23 +49,6 @@
 			<div class="col-12 col-sm-6 col-lg-3">
 				
 				<section class="product-box">
-<<<<<<< HEAD
-					<% productos.forEach(function(producto){%>
-						<section class="product-box">
-							<a href="/product/detalle/:id">
-								<figure class="product-box_image">
-									<img src="<%= producto.url_image %>" alt="Foto Producto">
-								</figure>
-								<article class="product-box_data">
-									<h2><%= producto.name_ %></h2>
-									<div>
-										<p><%= producto.description %></p>
-									</div>
-								</article> 
-							</a>
-						</section>
-					<% }) %>
-=======
 					<% if(data.products.length != 0) { %>
 					<% for(i=0;i< data.products.length ; i++){%>
 						<a href="/products/<% data.products[i].id %>">
@@ -79,7 +62,6 @@
 							</article>
 						</a>
 					<% } %>
->>>>>>> 8cc4a6ceb67cc1cfcf6f09ca515bd1e8410bf6ef
 				</section>
 			
 			</div>
