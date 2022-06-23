@@ -6,7 +6,7 @@
 
 <body>
 	<!-- Header -->
-	<%- include('./partials/header') %>
+
 	<!-- /Header -->
 
 	<!-- Novedades -->
@@ -24,12 +24,20 @@
 				<input type="search" name="search" placeholder="Ferrari F50">
 				<input type="submit" value="Buscar">
 			</form>
+			<section class="product-box">
+				<a href="/product/detalle/:id">
+					<figure class="product-box_image">
+						<img src="<%= producto.url_image %>" alt="Foto Producto">
+					</figure>
+					<article class="product-box_data">
+						<h2><%= producto.name_ %></h2>
+						<div>
+							<p><%= producto.description %></p>
+						</div>
+					</article> 
+				</a>
+			</section>
 
-			<% productos.forEach(producto => %>
-				<div>
-					<p> <%= producto.name %> </p>
-				</div>
-			<% ) %>
 	<!-- footer -->
 	<%- include('./partials/footer') %>
 	<!-- /footer -->

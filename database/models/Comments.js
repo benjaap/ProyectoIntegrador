@@ -13,7 +13,7 @@ module.exports = function (sequelize, dataTypes) {
             type: dataTypes.DATE,
             allowNull:true,
         },
-        users_id: {
+        user_id: {
             // autoIncrement: true,
             primaryKey: true,
             type: dataTypes.INTEGER

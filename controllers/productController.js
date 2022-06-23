@@ -1,10 +1,14 @@
 const db = require('./../database/models/index');
 const bycript = require('bcryptjs');
-const {Op} = require('sequelize');
+const {Op, where} = require('sequelize');
 
 const productController = {
-    show: function(req, res){ //REVISAR
+    show: function(req, res){ 
         let id = req.params.id
+        let auth = null 
+        if(req.session.auth){
+            auth = req.session.auth
+        } 
 
         db.products.findByPk(id, {
             include: [
@@ -12,27 +16,59 @@ const productController = {
                 {association: 'comments'}
             ]
         })
+
         .then((data)=>{
             res.render('product', {product: data})
         })
+
         .catch((err)=>{
             console.log(err)
         })
+        
+        const prod = db.Products.findAll() //Revisar
+        .then(function(prod){const auth2 = {name: prod.name, description: prod.description, image: prod.url_image, }
+        }
+        )
+
+        db.users.create(productDetail)
+            .then(data => {
+                res.redirect('/')
+            })
+            .catch(e=>{
+                console.log(e)
+                res.send("Error al crear el usuario")
+            })
+        
+        res.render('product', {Title: 'Detalle Producto', auth})
     },
-    list: async function(req,res){
+    search: async function(req,res){
         const search = req.query.search
         let productos = []
         if(search){
             const consulta = {name: {[Op.like]: '%'+search+'%'}}
-            productos = await db.products.findAll({
-                where: consulta
-            })
+            productos = await db.products.findAll()
         } else{
             productos = await db.products.findAll()
         }
-        res.render('productList', {productos})
+        
+
+        let auth = null 
+        if(req.session.auth){
+            auth = req.session.auth
+            res.render('productsList', {productos}, auth)
+        } else{
+            res.redirect('/')
+        }
+        
     },
-    store: function(req, res){ //REVISAR
+    add: function(req,res){
+        let auth = null 
+        if(req.session.auth){
+            auth = req.session.auth
+        } 
+        res.render('Add', {Title:'Productos', auth})
+    },
+    store: function(req, res){
         let data = req.body;
         let newProduct = {
             name: req.body.name,

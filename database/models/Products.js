@@ -7,7 +7,7 @@ module.exports = function (sequelize, dataTypes) {
             primaryKey: true,
             type: dataTypes.INTEGER
         },
-        name: {
+        name_: {
             type: dataTypes.STRING
         },
         created_at : {
@@ -20,7 +20,7 @@ module.exports = function (sequelize, dataTypes) {
         url_image: {
             type: dataTypes.STRING
         },
-        users_id: {
+        user_id: {
             primaryKey: true,
             type: dataTypes.INTEGER
         },

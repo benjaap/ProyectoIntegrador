@@ -1,5 +1,6 @@
 const db = require('./../database/models/index');
 const bycript = require('bcryptjs')
+
 const userController = {
     user: function(req, res){
         res.render('index', { title:'Usuarios' })
@@ -12,26 +13,50 @@ const userController = {
         const password = req.body.password
 
         const user = await db.users.findOne({where:{email:email}})
-        if (user) {
-            if(bycript.compareSync(password,user.password_)){
-                const auth = {id: user.id, name: user.name_, email: user.email }
-                req.session.cookie.maxAge = 3600000;
-                req.session.auth = auth;
-                res.redirect('/')
+        .then(function (user){
+            if (user) {
+                if(bycript.compareSync(password,user.password_)) {
+                    const auth = {id: user.id, name: user.name_, email: user.email}
+                    req.session.cookie.maxAge = 3600000;
+                    req.session.auth = auth;
+                    res.redirect('/')
+                }
+                else {
+                    res.redirect('/users/login')
+                }
+            } 
+            else {
+                res.redirect('/users/login')
             }
-
-            else{
-                res.send("Credenciales incorrectas")
-            }
-        } 
-        else {
-            res.send("Usuario no encontrado")
-        }
+        })
+        .catch(function (error){
+            console.log(error)
+            res.send("Problema de Conexion")
+        })
     },
     profile: function(req, res){
-        res.render('profile', {title:'profile'})
+        let auth = null 
+        console.log(req.session.auth)
+        if(req.session.auth){
+            auth = req.session.auth
+            db.products.findAll()
+            .then(
+                productos => {
+                    res.render('profile', {title:'profile', auth, productos})
+                }
+            )
+            .catch(e => {res.send("Error de conexion")})
+        }  
+        else{
+            res.redirect('/')
+        }
     },
     editProfile: function(req, res){
+        let auth = null 
+        if(req.session.auth){
+            auth = req.session.auth
+        } 
+        
         res.render('editProfile', {title:'Edit Profile'})
     },
     register: function(req, res){
@@ -46,23 +71,23 @@ const userController = {
             let errors = {}
             if(req.body.email === ""){
                 errors.message = "El email es obligatorio";
-                console.log(errors) // Guardar errors en locals
+                console.log(errors) 
                 return res.render('register')
             } else if(req.body.password === ""){
                 errors.message = "La contraseña es obligatoria";
-                console.log(errors) // Guardar errors en locals
+                console.log(errors) 
                 return res.render('register')
             } else if(req.body.retypePassword === ""){
                 errors.message = "La contraseña es obligatoria";
-                console.log(errors) // Guardar errors en locals
+                console.log(errors) 
                 return res.render('register')
             }else if(req.password != req.retypePassword){
                 errors.message = "Las contraseñas no coinciden";
-                console.log(errors) // Guardar errors en locals
+                console.log(errors) 
                 return res.render('register')
             }else if (req.file.mimetype != 'image/png' && req.file.mimetype != 'image/jpg' && req.file.mimetype != 'image/jpeg'){
                 errors.message = "El archivo debe ser jpg o png";
-                console.log(errors) // Guardar errors en locals
+                console.log(errors) 
                 return res.render('register')
             }else {
                 db.users.findOne({
@@ -71,7 +96,7 @@ const userController = {
                 .then(function(user){
                     if(user != null){
                         errors.message = "El email ya esta registrado por favor elija otro";
-                        console.log(errors) // Guardar errors en locals
+                        console.log(errors) 
                         return res.render('register')
                     }else {
                         let newUser = {
@@ -89,7 +114,7 @@ const userController = {
                             .then(data => {
                                 res.redirect('/')
                             })
-                            .catch(e=>{
+                            .catch(e =>{
                                 console.log(e)
                                 res.send("Error al crear el usuario")
                             })

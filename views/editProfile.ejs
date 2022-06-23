@@ -6,7 +6,11 @@
 
 <body>
 	<!-- Header -->
-	<%- include('./partials/headerLogueado') %>
+	<% if(!auth){%>
+		<%- include('./partials/header')%>
+	<% } else{ %> 
+		<%- include('./partials/headerLogueado')%> 
+	<% } %>
 	<!-- /Header -->
 
 	<!-- Novedades -->

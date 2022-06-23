@@ -5,7 +5,11 @@
 
 <body>
 	<!-- Header -->
-	<%- include('./partials/header') %>
+	<% if(!auth){%>
+		<%- include('./partials/header')%>
+	<% } else{ %> 
+		<%- include('./partials/headerLogueado')%> 
+	<% } %>
 	<!-- /Header -->
 	
 	<!-- product detail -->

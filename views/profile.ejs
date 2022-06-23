@@ -5,7 +5,11 @@
 
 <body>
 	<!-- Header -->
-	<%- include('./partials/headerLogueado') %>
+	<% if(!auth){%>
+		<%- include('./partials/header')%>
+	<% } else{ %> 
+		<%- include('./partials/headerLogueado')%> 
+	<% } %>
 	<!-- /Header -->
 
 	<!-- Datos del usuario -->
@@ -45,19 +49,21 @@
 			<div class="col-12 col-sm-6 col-lg-3">
 				
 				<section class="product-box">
-					<% for(i=0;i<lista.lenght;i++){%>
-						<a href="/product">
-							<figure class="product-box_image">
-								<img src="images/products/default-image.png" alt="cafetera moulinex">
-							</figure>
-							<article class="product-box_data">
-								<h2><%= lista[i].nombreDelProducto %></h2>
-								<p><%= lista[i].descripcion %></p>
-								<p><%= comentario[i].usuario %></p>
-								<p><%= comentario[i].textoDelComentario %></p>
-							</article>
-						</a>
-					<% } %>
+					<% productos.forEach(function(producto){%>
+						<section class="product-box">
+							<a href="/product/detalle/:id">
+								<figure class="product-box_image">
+									<img src="<%= producto.url_image %>" alt="Foto Producto">
+								</figure>
+								<article class="product-box_data">
+									<h2><%= producto.name_ %></h2>
+									<div>
+										<p><%= producto.description %></p>
+									</div>
+								</article> 
+							</a>
+						</section>
+					<% }) %>
 				</section>
 			
 			</div>
