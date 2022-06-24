@@ -47,32 +47,26 @@ module.exports = function (sequelize, dataTypes) {
     updatedAt: false
    };
 
-   const User = sequelize.define(alias, cols, config);
+   const Users = sequelize.define(alias, cols, config);
+   //Modelos eliminados porque no paraban de dar errores
+   //    Users.associate = function(models){
+    //     Users.hasMany(models.Comment, {
+ //         as: 'comments',
+ //         foreignKey: 'user_id'
+ //     }),
+ 
+ //     Users.hasMany(models.Product,{
+ //         as:"products",
+ //         foreignKey: "user_id"
+ //     })
 
-//    Users.associate = function(models){
-    
-//     Users.hasMany(models.Comment, {
-//         as: 'comments',
-//         foreignKey: 'user_id'
-//     }),
+ //     Users.hasMany(models.Product,{
+ //         as:"followers",
+ //         foreignKey: "follower_id"
+ // //     })
+ //     }
 
-//     Users.hasMany(models.Product,{
-//         as:"products",
-//         foreignKey: "user_id"
-//     })
-
-//     Users.hasMany(models.Product,{
-//         as:"followers",
-//         foreignKey: "follower_id"
-// //     })
-    
-//     }
-
-
-
-
-
-   return User;
+   return Users;
 
 
 }

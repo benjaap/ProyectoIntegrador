@@ -37,23 +37,18 @@ module.exports = function (sequelize, dataTypes) {
         updatedAt: false
        };
     
-       const Product = sequelize.define(alias, cols, config);
-    
-       Products.associate = function(models){
-           Products.hasMany(models.Comment, {
-               as: 'comments',
-               foreignKey: 'products_id'
-           }),
-
-           Products.belongsTo(models.User,{
-               as: "users",
-               foreignKey: "user_id"
-           })
-       }
-
-
-
-
-       return Product;
+       const Products = sequelize.define(alias, cols, config);
+     //Modelos eliminados porque no paraban de dar errores
+     //    Products.associate = function(models){
+     //        Products.hasMany(models.Comment, {
+     //            as: 'comments',
+     //            foreignKey: 'products_id'
+     //        }),
+     //        Products.belongsTo(models.User,{
+     //            as: "users",
+     //            foreignKey: "user_id"
+     //        })
+     //    }
+       return Products;
 
     }
