@@ -38,15 +38,16 @@ module.exports = function (sequelize, dataTypes) {
        };
     
        const Products = sequelize.define(alias, cols, config);
-    //  Modelos eliminados porque no paraban de dar errores
+    
         Products.associate = function(models){
-            Products.hasMany(models.Comment, {
-                as: 'comments',
-                foreignKey: 'products_id'
-            }),
             Products.belongsTo(models.User,{
-                as: "users",
-                foreignKey: "user_id"
+                as:'user',
+                foreingKey:'user_id'
+            });
+            
+            Products.hasMany(models.Comments, {
+                as:'comments',
+                foreingKey: 'product_id'
             })
         }
        return Products;

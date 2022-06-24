@@ -47,32 +47,22 @@ module.exports = function (sequelize, dataTypes) {
     updatedAt: false
    };
 
+   const User = sequelize.define(alias, cols, config);
+
+   User.associate = (models)=>{
+
+   User.hasMany(models.Products,{
+       as:'products',
+       foreingKey:'user_id'
+   });
+
+   User.hasMany(models.Comment,{
+       as:'comments',
+       foreingKey:'user_id'
+   });
+}
+   
+   return User;
   
-
-//    Users.associate = function(models){
-    
-//     Users.hasMany(models.Comment, {
-//         as: 'comments',
-//         foreignKey: 'user_id'
-//     }),
-
-//     Users.hasMany(models.Product,{
-//         as:"products",
-//         foreignKey: "user_id"
-//     })
-
-//     Users.hasMany(models.Product,{
-//         as:"followers",
-//         foreignKey: "follower_id"
-// //     })
-    
-//     }
-
-
-
-
-
-  
-
 }
 
