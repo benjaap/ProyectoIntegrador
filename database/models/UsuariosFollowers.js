@@ -26,8 +26,5 @@ module.exports = function(sequelize, dataTypes){
         underscored: true,
        };
     
-       const UsuariosFollowers= sequelize.define(alias, cols, config);
-    
-       return UsuariosFollowers;
-
+       
     }
